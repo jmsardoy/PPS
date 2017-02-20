@@ -3,11 +3,17 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 from bs4 import BeautifulSoup
 import re
+from num2words import num2words
 
 
 def limpiarOracion(string):
 	if(not string.endswith(".")):
 		string += "."
+
+	palabras = string.split()
+	for i in palabras:
+		if i.isdigit():
+			string = string.replace(i,num2words(int(i)))
 	string = string.replace('"','')
 	string = string.replace(","," ,")
 	string = string.replace("?", " ?")
@@ -19,6 +25,7 @@ def limpiarOracion(string):
 	string = string.replace("-", " ")
 	string = string.replace("'s", "")
 	string = string.replace("'", "")
+	string = string.replace("#", "number ")
 	string = string.lower()
 	m = re.search(" '[^']*' ", string)
 	while(m):
