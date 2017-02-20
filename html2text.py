@@ -16,6 +16,7 @@ def limpiarOracion(string):
 	string = string.replace("!", "")
 	string = string.replace(".", " .")
 	string = string.replace(";", " ;")
+	string = string.replace("-", " ")
 	string = string.lower()
 	m = re.search(" '[^']*' ", string)
 	while(m):
