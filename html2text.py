@@ -25,6 +25,8 @@ def limpiarOracion(string):
 	for i in string.split():
 		if i.isdigit():
 			string = string.replace(i,num2words(int(i)))
+		if(re.search('(\d)(st|nd|rd|th)', i)):
+			string = string.replace(i,num2words(int(i[:-2]),ordinal=True))
 	string = string.replace("-", " ")
 	string = string.lower()
 	m = re.search(" '[^']*' ", string)
