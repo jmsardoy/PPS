@@ -10,10 +10,6 @@ def limpiarOracion(string):
 	if(not string.endswith(".")):
 		string += "."
 
-	palabras = string.split()
-	for i in palabras:
-		if i.isdigit():
-			string = string.replace(i,num2words(int(i)))
 	string = string.replace('"','')
 	string = string.replace(","," ,")
 	string = string.replace("?", " ?")
@@ -26,6 +22,10 @@ def limpiarOracion(string):
 	string = string.replace("'s", "")
 	string = string.replace("'", "")
 	string = string.replace("#", "number ")
+	for i in string.split():
+		if i.isdigit():
+			string = string.replace(i,num2words(int(i)))
+	string = string.replace("-", " ")
 	string = string.lower()
 	m = re.search(" '[^']*' ", string)
 	while(m):
