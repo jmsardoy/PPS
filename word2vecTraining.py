@@ -9,8 +9,8 @@ print "Leyendo archivo..."
 file = open("files/file_training.txt")
 sentences = file.readlines()
 sentences = [i.replace(" .\n","").split() for i in sentences]
-print "Entrenando modelo..."e
-model = gensim.models.Word2Vec(sentences, size=300,window=5, min_count=5,workers=4, iter=1000)
+print "Entrenando modelo..."
+model = gensim.models.Word2Vec(sentences, size=300,window=5, min_count=1,workers=4)
 print "Guardando modelo..."
 model.save("models/word2vec.mod")
 print "Fin"
