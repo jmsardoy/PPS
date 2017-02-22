@@ -5,6 +5,11 @@ from bs4 import BeautifulSoup
 import re
 from num2words import num2words
 
+diccionario_text = open("files/diccionario.txt").readlines()
+diccionario_text = [i.replace("\n","").split("-") for i in diccionario_text]
+diccionario = {}
+for i in diccionario_text:
+	diccionario[i[0]] = i[1]
 
 def limpiarOracion(string):
 	if(not string.endswith(".")):
@@ -23,6 +28,8 @@ def limpiarOracion(string):
 	string = string.replace("'", "")
 	string = string.replace("#", "number ")
 	for i in string.split():
+		if(diccionario.has_key(i)):
+			string.replace(i,diccionario[i])
 		if i.isdigit():
 			string = string.replace(i,num2words(int(i)))
 		if(re.search('(\d)(st|nd|rd|th)', i)):
