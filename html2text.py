@@ -11,6 +11,8 @@ diccionario = {}
 for i in diccionario_text:
 	diccionario[i[0]] = i[1]
 
+import pdb; pdb.set_trace()
+
 def limpiarOracion(string):
 	if(not string.endswith(".")):
 		string += "."
@@ -28,12 +30,12 @@ def limpiarOracion(string):
 	string = string.replace("'", "")
 	string = string.replace("#", "number ")
 	for i in string.split():
-		if(diccionario.has_key(i)):
-			string.replace(i,diccionario[i])
 		if i.isdigit():
 			string = string.replace(i,num2words(int(i)))
 		if(re.search('(\d)(st|nd|rd|th)', i)):
 			string = string.replace(i,num2words(int(i[:-2]),ordinal=True))
+		if(diccionario.has_key(i)):
+			string = string.replace(i,diccionario[i])
 	string = string.replace("-", " ")
 	string = string.lower()
 	m = re.search(" '[^']*' ", string)

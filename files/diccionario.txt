@@ -74,7 +74,6 @@ alarmedly-alarmingly
 standind-standing
 wrinkley-wrinkled
 chidl-child
-:-:
 .aa-.aa
 .an-.an
 hangong-hanging
@@ -195,7 +194,6 @@ on=f-on=f
 position,-position
 decrepitness-decrepitness
 i<3ny-i<3ny
-;-;
 fishemen-fishmen
 barrior-barrier
 two01two-two01two
@@ -209,7 +207,6 @@ canooers-canoers
 retrives-retrieves
 49ers-49ers
 inactors-inactors
-.-.
 kakhis-khakis
 exhibt-exhibit
 plne-plane
@@ -227,7 +224,6 @@ gallopsing-galloping
 plling-pulling
 cacthing-catching
 sillouhette-silhouette
-,-,
 fadaw-fadaw
 pinestraw-pine straw
 craftzine-craftzine
