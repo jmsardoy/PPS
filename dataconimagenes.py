@@ -33,7 +33,7 @@ for sentence in sentences:
 			new_frase=""
 			new_image = ultima_imagen
 			while new_image == ultima_imagen:
-				index_random = randint(0,len(sentences))
+				index_random = randint(0,len(sentences)-1)
 				sentence = sentences[index_random]
 				new_frase = sentence.split(" . - ")[0]
 				new_image = sentence.split(" . - ")[1]
@@ -45,7 +45,7 @@ for i in range(contador):
 	new_frase=""
 	new_image = ultima_imagen
 	while new_image == ultima_imagen:
-		index_random = randint(0,len(sentences))
+		index_random = randint(0,len(sentences)-1)
 		sentence = sentences[index_random]
 		new_frase = sentence.split(" . - ")[0]
 		new_image = sentence.split(" . - ")[1]
