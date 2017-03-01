@@ -41,3 +41,12 @@ for sentence in sentences:
 		contador = 1
 		ultima_imagen = image
 		escribitBloque(frase=frase,image=image,result="1")
+for i in range(contador):
+	new_frase=""
+	new_image = ultima_imagen
+	while new_image == ultima_imagen:
+		index_random = randint(0,len(sentences))
+		sentence = sentences[index_random]
+		new_frase = sentence.split(" . - ")[0]
+		new_image = sentence.split(" . - ")[1]
+	escribitBloque(frase=new_frase,image=ultima_imagen,result="0")
